@@ -9,7 +9,7 @@
   margin-bottom: 1rem;
 }
 
-.product-list{
+.product-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -30,4 +30,140 @@
   border-radius: 8px;
   padding: 1rem;
   background: #fff;
+}
+
+.product-card .actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.product-card .actions a,
+.product-card .actions button {
+  background-color: #2196F3;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card .actions a:hover {
+  background-color: #1976D2;
+}
+
+.product-card .actions button:hover {
+  background-color: #f44336;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+    
+    label{
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #333
+    }
+    input {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      transition: border 0.3s;
+
+      &:focus{
+        border-color: #007bff;
+        outline: none;
+      }
+    }
+    select {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      color: #333;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+
+      &:hover{
+        border-color: #999;
+      }
+
+      &:focus{
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        background-color: #fff;
+      }
+    }
+  }
+  .submit-btn {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+.search-container {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+
+  input{
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.3s all;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+    &:focus {
+      border-color: #5c6bc0;
+      box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
+      outline: none;
+    }
+  }
+}
+
+.add-button {
+  background-color:  #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #45a049;
+  }
 }

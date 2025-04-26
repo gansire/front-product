@@ -4,8 +4,10 @@ import {apiRoutes}  from '../api/routes';
 import ProductCard from '../components/ProductCard';
 import ProductSearchName from '../components/ProductSearchName';
 import { Link } from 'react-router-dom';
+import { useCategoryContext } from '../context/CategoryContext';
 
 export default function ProductList(){
+    const { category } = useCategoryContext();
     const [searchName, setSearchName] = useState('');
     const [product, setProduct] =  useState<any[]>([]); 
 
@@ -16,6 +18,9 @@ export default function ProductList(){
     }, []);
 
     const searchingProduct = product.filter((products)=> products.name.toLowerCase().includes(searchName.toLowerCase()))
+    if(category.length === 0){
+        return <div>Carregando categorias...</div>
+    }
     return(
         <div className='product-list-container'>
             <div className='product-list-header'>
@@ -24,7 +29,7 @@ export default function ProductList(){
             </div>
             <div className='product-list'>
                 {searchingProduct.map(product => (
-                    <ProductCard key={product.id} product={product}/>
+                    <ProductCard key={product.id} product={product} category={category}/>
                 ))}
             </div>
         </div>
